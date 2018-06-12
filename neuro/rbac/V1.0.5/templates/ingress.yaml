@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+  labels:
+    app: wordpress
+    tier: frontend
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+        - path:
+          backend:
+            serviceName: wordpress
+            servicePort: 80
